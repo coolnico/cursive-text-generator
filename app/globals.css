@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0d0d0d;
+  --primary: #1e40af;
+  --primary-hover: #1e3a8a;
+  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --text-secondary: #475569;
+  --accent: #7c3aed;
+  --header-bg: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme='dark'] {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --card-bg: #1e293b;
+  --border: #334155;
+  --text-secondary: #94a3b8;
+  --accent: #a78bfa;
+  --header-bg: rgba(15, 23, 42, 0.9);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins and padding for specific elements instead of all */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Gradient animation for colorful text */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom hover effect for font items */
+.font-item-hover {
+  transition: all 0.2s;
+}
+
+.font-item-hover:hover {
+  background: linear-gradient(to bottom, #f0f9ff, #e0f2fe);
+  border-color: #bae6fd;
+}
+
+[data-theme='dark'] .font-item-hover:hover {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.08));
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Force normal font for textarea */
+textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: normal !important;
+  text-transform: none !important;
+}
+
+textarea::placeholder {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-style: normal !important;
+}
